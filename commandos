@@ -9,3 +9,6 @@ rsync -avvv -e "ssh -i/home/carlopim/id_rsa"  /home/carlopim/test1/nsca-client_2
 
 #run lines from a file and do sometjing. in this case remove.
 for i in `cat /home/carlopim/QuerySD_818cf7da`; do rm -v $i;done
+
+#sftp a server
+sftp -C -i /getingplatform - p 10022 getingplatform@10.113.140.85 
