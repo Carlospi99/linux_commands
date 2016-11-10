@@ -23,3 +23,6 @@ $ scp foobar.txt your_username@remotehost.edu:/some/remote/directory
 
 Copy the directory "foo" from the local host to a remote host's directory "bar"	    
 $ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
+
+#copy a file from inside a container
+sudo docker cp b3152b63701a:/tmp/nsca /home/carlopim/
