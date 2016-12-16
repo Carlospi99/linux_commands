@@ -26,3 +26,5 @@ $ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
 
 #copy a file from inside a container
 sudo docker cp b3152b63701a:/tmp/nsca /home/carlopim/
+
+#another to run in westfor i in `cat /home/carlopim/UUIDerror2.txt` ; do  zgrep -A 5 $i  debug.2016-12-1[0-6]* | zgrep "clientId" >> /home/carlopim/clientIderror.txt ; done
