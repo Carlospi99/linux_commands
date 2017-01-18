@@ -38,7 +38,7 @@ sudo docker run -i -t --rm docker-registry.smctr.net/mysql_client -h 10.11.151.8
 *************************
 ***Script for log rotation windows***
 @echo off
-rem Solution team Tewkesbury C.P.
+rem 
 rem seting the name of the log rotate 
 
 set dateformat=%DATE:~6,4%%DATE:~3,2%%DATE:~0,2%
