@@ -28,3 +28,9 @@ $ scp -r foo your_username@remotehost.edu:/some/remote/directory/bar
 sudo docker cp b3152b63701a:/tmp/nsca /home/carlopim/
 
 #another to run in westfor i in `cat /home/carlopim/UUIDerror2.txt` ; do  zgrep -A 5 $i  debug.2016-12-1[0-6]* | zgrep "clientId" >> /home/carlopim/clientIderror.txt ; done
+
+*************
+*************
+**connect to database and do a bauckup*****
+docker run --rm --entrypoint=/usr/bin/mysqldump docker-registry.smctr.net/mysql_client --opt --single-transaction -h 10.11.151.83 -u  3902  -pxxxxxx 3902_nets_valid | gzip -c >  preprod_tsmsp_$(date +%Y-%m-%d.%H:%M:%S)_.sql.gz
+sudo docker run -i -t --rm docker-registry.smctr.net/mysql_client -h 10.11.151.83 -u 3902  -pxxxxx 3902_nets_vali
