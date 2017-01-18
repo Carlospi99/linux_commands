@@ -34,3 +34,26 @@ sudo docker cp b3152b63701a:/tmp/nsca /home/carlopim/
 **connect to database and do a bauckup*****
 docker run --rm --entrypoint=/usr/bin/mysqldump docker-registry.smctr.net/mysql_client --opt --single-transaction -h 10.11.151.83 -u  3902  -pxxxxxx 3902_nets_valid | gzip -c >  preprod_tsmsp_$(date +%Y-%m-%d.%H:%M:%S)_.sql.gz
 sudo docker run -i -t --rm docker-registry.smctr.net/mysql_client -h 10.11.151.83 -u 3902  -pxxxxx 3902_nets_vali
+*************************
+*************************
+***Script for log rotation windows***
+@echo off
+rem Solution team Tewkesbury C.P.
+rem seting the name of the log rotate 
+
+set dateformat=%DATE:~6,4%%DATE:~3,2%%DATE:~0,2%
+set Now=%Time: =0%
+set timeformat=%Now:~0,2%%Now:~3,2%
+
+rem moving the files with a date name
+cd /D "E:\Logs\"
+move westpacM4.log westpacM4_%dateformat%%timeformat%.log
+move westpacM4OUT.log westpacM4OUT_%dateformat%%timeformat%.log
+move westpacpreprod.log westpacpreprod_%dateformat%%timeformat%.log
+move westpacprodSTGEORGE.log westpacprodSTGEORGE_%dateformat%%timeformat%.log
+move westpacpreprodSTGEORGE.log westpacpreprodSTGEORGE_%dateformat%%timeformat%.log
+move westpacSGProdOUT.log westpacSGProdOUT_%dateformat%%timeformat%.log
+move westpacSGUAtOUT.log westpacSGUAtOUT_%dateformat%%timeformat%.log
+move westpac4UAtOUT.log westpac4UAtOUT_%dateformat%%timeformat%.log
+****************************
+****************************
